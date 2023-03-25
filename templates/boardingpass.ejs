@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ticket</title>
+    <style>
+      @import url("https://necolas.github.io/normalize.css/8.0.1/normalize.css");
+      @import url("https://fonts.googleapis.com/css2?family=Heebo:wght@400;700&display=swap");
+
+      p {
+        font-family: "heebo";
+        margin-bottom: 0;
+        margin-top: 0;
+      }
+      .MasterDiv {
+        display: flex;
+        justify-content: center !important;
+        width: 100%;
+      }
+      .ticket--outline {
+        max-width: 23.875rem;
+        margin: auto;
+        width: 100%;
+        min-height: 38.625rem;
+        border: solid 1px #dadada;
+        border-radius: 14px;
+      }
+      .ticket--img {
+        width: 4.25rem;
+        height: 4.25rem;
+        border-radius: 50%;
+        background-color: #2a70fa;
+        margin-left: 1rem;
+        margin-top: 1.3125rem;
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+      .ticket--header {
+        display: flex;
+      }
+      .name {
+        font-family: "heebo";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 1.4315rem;
+        line-height: 0.6875rem;
+        margin-top: 2.125rem;
+        margin-bottom: 0px;
+        margin-left: 1rem;
+      }
+      .nameEnrolGender {
+        font-family: "heebo";
+        font-style: normal;
+        font-size: 17.0476px;
+        font-weight: 300;
+        color: #757575;
+        margin-left: 1rem;
+        margin-top: 0.625rem;
+      }
+      .dashed--line {
+        margin-top: 1rem;
+        border: 1px dashed rgba(0, 90, 92, 0.2);
+      }
+      .from--to {
+        display: flex;
+        gap: 5.375rem;
+        justify-content: center;
+        margin-top: 3rem;
+        margin-left: 1rem;
+        margin-right: 1rem;
+
+      }
+      .from {
+        font-family: "heebo";
+        font-weight: 400;
+        font-size: 13.6624px;
+        line-height: 17px;
+        margin-right: 2rem;
+
+        color: #000000;
+      }
+      .place {
+        font-style: normal;
+        font-weight: 700;
+        font-size: 22.9047px;
+        line-height: 11px;
+        color: #2a70fa;
+        margin-top: 0.375rem;
+      }
+      .place--code {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 17.0476px;
+        margin-top: 0.35rem;
+        color: #757575;
+      }
+      .date--time {
+        display: flex;
+        gap: 86px;
+        justify-content: center;
+        margin-top: 3rem;
+        margin-left: 1rem;
+        margin-right: 1rem;
+
+      }
+      .seatNo {
+        gap: 100px;
+        justify-content: center;
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+        margin-left: 1rem;
+        margin-right: 1rem;
+
+      }
+      #qrCode {
+        width: 6.5rem;
+      }
+      .qr--boardingPass {
+        display: flex;
+        gap: 4.6875rem;
+        justify-content: center;
+        margin-top: 1rem;
+        margin-left: 1rem;
+        margin-right: 1rem;
+        padding-bottom: 2rem;
+
+      }
+      .boardingPass  {
+        margin-left: auto;
+      }
+      .boardingPass p {
+        font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 38.966px;
+        color: rgba(153, 153, 153, 0.62);
+      }
+      .group{
+        width: 100%;
+      }
+      * {
+        font-family: "Google Sans", sans-serif !important;
+      }
+    </style>
+  </head>
+  <body
+    style="
+      display: flex;
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+      margin:auto;
+    "
+  >
+    <div class="MasterDiv" style="justify-content: center;">
+      <div class="ticket--outline">
+        <div class="ticket--header">
+          <div
+            class="ticket--img"
+            style="
+              background-image: url('https://github.com/lucidrohit/assets/blob/main/icon%20(1).png?raw=true');
+            "
+          ></div>
+          <div class="ticket--nameEnrolGender">
+            <p class="name"><%= name %></p>
+            <p class="nameEnrolGender"><%= enroll %> || <%= gender %></p>
+            <p class="nameEnrolGender" style="margin-top: 0;"><%= phone %></p>
+          </div>
+        </div>
+        <div class="dashed--line"></div>
+        <div class="from--to">
+          <div class="group">
+            <p class="from">From:</p>
+            <p class="place">Srinagar</p>
+            <p class="place--code">NIT Sri</p>
+          </div>
+          <div class="group">
+            <p class="from">To:</p>
+            <p class="place">Gulmarg</p>
+            <p class="place--code">Gul</p>
+          </div>
+        </div>
+        <div class="date--time">
+          <div class="group">
+            <p class="place--code">Date:</p>
+            <p class="place">25/03/23</p>
+          </div>
+          <div class="group">
+            <p class="place--code">Time:</p>
+            <p class="place">7:00am</p>
+          </div>
+        </div>
+        <div class="date--time seatNo">
+          <div class="group">
+            <p class="place--code">Type:</p>
+            <p class="place">Two-way</p>
+          </div>
+          <div class="group">
+            <p class="place--code">Seat No:</p>
+            <p class="place">--</p>
+          </div>
+        </div>
+        <div class="divider">
+          <img
+            src="https://github.com/lucidrohit/assets/blob/main/divider.png?raw=true"
+            alt=""
+          />
+        </div>
+        <div class="qr--boardingPass">
+          <div class="qrCode">
+            <img
+              src="https://cdn-thumbs.imagevenue.com/bd/84/5c/ME1663GL_t.png"
+              alt=""
+              id="qrCode"
+            />
+          </div>
+          <div class="boardingPass">
+            <p>Boarding</p>
+            <p>Pass</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <link rel="stylesheet" href="https://raw.githubusercontent.com/lucidrohit/assets/b936340061054ad6c14fb411cc852bb8beaedac8/Boarding-pass.css">
+  </body>
+</html>
